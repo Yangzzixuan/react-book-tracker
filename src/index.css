@@ -1,0 +1,20 @@
+:root{
+    --space-indigo: #22223bff;
+	--dusty-grape: #4a4e69ff; 
+	--lilac-ash: #9a8c98ff;
+	--almond-silk: #c9ada7ff;
+	--parchment: #f2e9e4ff;
+
+	--text-main: #22223b;
+	--surface: #fffaf7;
+	--text-muted: #6f6670;
+}
+*{
+	box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--parchment);
+  color: var(--text-main);
+}

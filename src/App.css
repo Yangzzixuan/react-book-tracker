@@ -1,0 +1,119 @@
+
+.app {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+.app h1 {
+  text-align: center;
+  margin-bottom: 32px;
+  color: var(--space-indigo);
+}
+
+.filterArea,
+.addArea {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+input,
+select,
+button {
+  padding: 10px 12px;
+  border: 1px solid var(--almond-silk);
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+input,
+select {
+  background-color: var(--surface);
+  color: var(--text-main);
+}
+
+button {
+  background-color: var(--dusty-grape);
+  color: var(--parchment);
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--space-indigo);
+}
+
+.showArea {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.itemCard {
+  background-color: var(--surface);
+  color: var(--text-main);
+  border: 1px solid var(--almond-silk);
+  border-radius: 10px;
+  padding: 18px;
+}
+
+.itemCard h2 {
+  margin: 0 0 12px;
+  color: var(--space-indigo);
+}
+
+.itemCard p {
+  margin: 6px 0;
+  color: var(--text-muted);
+}
+
+.summaryArea {
+  text-align: center;
+  margin-top: 20px;
+  color: var(--dusty-grape);
+}
+.itemCover {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 14px;
+  display: block;
+}
+
+.itemMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.itemMeta p {
+  margin: 0;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background-color: var(--parchment);
+  color: var(--dusty-grape);
+  font-size: 13px;
+}
+
+.itemNote {
+  margin-top: 10px;
+  color: var(--text-muted);
+}
+
+.deleteButton {
+  margin-top: 14px;
+}
+
+.deleteButton button {
+  width: 100%;
+}
+@media (max-width: 700px) {
+  .showArea {
+    grid-template-columns: 1fr;
+  }
+}
