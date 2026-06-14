@@ -34,6 +34,20 @@ The dev server is fixed to:
 http://localhost:5173
 ```
 
+## Run Tests
+
+Start the dev server first:
+
+```bash
+npm run dev
+```
+
+Then open another terminal and run:
+
+```bash
+npm run test:e2e
+```
+
 ## Notes
 
 This is a pure frontend project. Data is saved in the browser with `localStorage`, so different browsers or different ports may not share the same data.
