@@ -84,6 +84,18 @@ button:hover {
   display: block;
 }
 
+.coverPlaceholder {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 8px;
+  margin-bottom: 14px;
+  display: grid;
+  place-items: center;
+  background-color: var(--parchment);
+  color: var(--lilac-ash);
+  font-weight: 700;
+}
+
 .itemMeta {
   display: flex;
   flex-wrap: wrap;
@@ -105,13 +117,20 @@ button:hover {
   color: var(--text-muted);
 }
 
-.deleteButton {
+.cardActions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
   margin-top: 14px;
 }
 
-.deleteButton button {
-  width: 100%;
+.emptyMessage {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--dusty-grape);
+  font-weight: 700;
 }
+
 @media (max-width: 700px) {
   .showArea {
     grid-template-columns: 1fr;
