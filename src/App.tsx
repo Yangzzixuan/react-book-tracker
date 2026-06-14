@@ -133,6 +133,19 @@ function App() {
     setCoverUrl("");
   }
 
+  function handleExportData(){
+    const data = JSON.stringify(items,null,2)
+    const blob = new Blob([data],{type:"application/json"})
+    const url = URL.createObjectURL(blob);
+
+    const link = document.createElement("a");
+    link.href = url;
+    link.download ="react-book-tracker-data.json";
+    link.click();
+    
+    URL.revokeObjectURL(url);
+  }
+
   const totalCount = items.length;
   const showingCount = displayItems.length;
 
@@ -177,6 +190,7 @@ function App() {
         onDeleteItem={handleDeleteItem}
         onEditItem={handleStartEdit}
       />
+      <button onClick={handleExportData}>Export JSON</button>
       <Summary totalCount={totalCount} showingCount={showingCount} />
     </div>
   );
