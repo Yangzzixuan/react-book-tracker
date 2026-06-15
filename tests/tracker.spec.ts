@@ -65,3 +65,8 @@ test("deletes an item", async ({ page }) => {
 
   await expect(page.getByRole("heading", { name: "EVA" })).not.toBeVisible();
 });
+test("sorts items by year",async({page})=>{
+  await page.locator(".filterArea select").nth(2).selectOption("year");
+  const firstCard = page.locator(".itemCard").first();
+  await expect(firstCard).toContainText("Cyberpunk");
+})
