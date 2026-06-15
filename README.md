@@ -12,6 +12,8 @@ A small React + TypeScript project for tracking books, movies, games, and anime.
 - Sort by rating, year, or title
 - Show cover images and fallback placeholders
 - Save data in `localStorage`
+- Export data as a JSON file
+- Import data from a JSON file
 
 ## Tech Stack
 
@@ -36,17 +38,11 @@ http://localhost:5173
 
 ## Run Tests
 
-Start the dev server first:
-
-```bash
-npm run dev
-```
-
-Then open another terminal and run:
-
 ```bash
 npm run test:e2e
 ```
+
+Playwright will start the local Vite server automatically.
 
 ## Notes
 
@@ -55,6 +51,5 @@ This is a pure frontend project. Data is saved in the browser with `localStorage
 ## Next Steps
 
 - Improve mobile layout
-- Add import and export for data
 - Add a detail page for each item
 - Connect to a backend database in a future full-stack version

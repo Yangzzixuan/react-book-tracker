@@ -158,14 +158,16 @@ function App() {
       try{
         const importedItems = JSON.parse(reader.result);
         if(!Array.isArray(importedItems)){
-          alert("Import failed. Date must be an array. ")
+          alert("Import failed. Data must be an array. ")
           return;
         }
         setItems(importedItems);
       }catch{
         alert("Import failed. Please choose a valid JSON file. ")
       }
-  }}
+  };
+  reader.readAsText(file);
+}
   const totalCount = items.length;
   const showingCount = displayItems.length;
 
