@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import type { Item } from "./type";
 import Summary from "./components/Summary";
@@ -145,7 +145,27 @@ function App() {
     
     URL.revokeObjectURL(url);
   }
-
+  function handleImportData(event:React.ChangeEvent<HTMLInputElement>){
+    const file = event.target.files?.[0];
+    if(!file){
+      return;
+    }
+    const reader = new FileReader();
+    reader.onload = () =>{
+      if (typeof reader.result !=="string"){
+        return;
+      }
+      try{
+        const importedItems = JSON.parse(reader.result);
+        if(!Array.isArray(importedItems)){
+          alert("Import failed. Date must be an array. ")
+          return;
+        }
+        setItems(importedItems);
+      }catch{
+        alert("Import failed. Please choose a valid JSON file. ")
+      }
+  }}
   const totalCount = items.length;
   const showingCount = displayItems.length;
 
@@ -190,7 +210,11 @@ function App() {
         onDeleteItem={handleDeleteItem}
         onEditItem={handleStartEdit}
       />
-      <button onClick={handleExportData}>Export JSON</button>
+      <div className="dataActions">
+        <button onClick={handleExportData}>Export JSON</button>
+        <input type="file" accept=".json" onChange={handleImportData}/>
+      </div>
+      
       <Summary totalCount={totalCount} showingCount={showingCount} />
     </div>
   );

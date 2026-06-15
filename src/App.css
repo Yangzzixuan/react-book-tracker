@@ -130,6 +130,13 @@ button:hover {
   color: var(--dusty-grape);
   font-weight: 700;
 }
+.dataActions{
+  display: flex;
+  justify-content: center;
+  gap:12px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
 
 @media (max-width: 950px) {
   .showArea {
